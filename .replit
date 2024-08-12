@@ -1,0 +1,13 @@
+compile = ["gfortran", "./main.f95", "-o", "bin/main"]
+
+entrypoint = "main.f95"
+run = "./bin/main app/hello.lfc"
+
+[nix]
+channel = "stable-23_11"
+
+[languages]
+  [languages.fortran]
+  pattern = "**/{*.f,*.f90,*.f70,*.f95,*.lfc}"
+    [languages.fortran.languageServer]
+    start = "fortls"
